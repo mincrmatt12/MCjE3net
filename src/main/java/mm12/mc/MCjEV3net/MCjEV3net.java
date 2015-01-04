@@ -1,5 +1,7 @@
 package mm12.mc.MCjEV3net;
 
+import mm12.mc.MCjEV3net.block.BlockLoader;
+import mm12.mc.MCjEV3net.core.GUIhandler;
 import mm12.mc.MCjEV3net.proxies.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -8,6 +10,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 
 
@@ -23,6 +26,10 @@ public class MCjEV3net {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		BlockLoader.registerBlocks();
+		BlockLoader.registerTileEntities();
+		
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GUIhandler());
 		
 	}
 	@EventHandler

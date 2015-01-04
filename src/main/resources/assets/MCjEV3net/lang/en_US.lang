@@ -1,0 +1,9 @@
+#English Lang file for MC-EV3
+itemGroup.EV3Tabs=EV3 integration
+
+block.TouchSensor.name=Touch Sensor Block
+block.ProximitySensor.name=Proximity Sensor Block
+block.GyroSensorRate.name=Gyroscopic Sensor Block - Rate
+block.GyroSensorAngle.name=Gyroscopic Sensor Block - Angle
+block.GenInterface.name=Custom Info Block
+block.Motor.name=Motor Control Block
