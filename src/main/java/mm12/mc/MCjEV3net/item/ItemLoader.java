@@ -9,7 +9,7 @@ public static Boolean Registered = false;
 	
 	public static Item cardItem;
 	
-	public static void registerBlocks(){
+	public static void registerItems(){
 		
 		cardItem = new CardItem().setUnlocalizedName(ELIB.cardItem);
 		

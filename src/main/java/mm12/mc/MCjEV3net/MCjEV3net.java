@@ -2,6 +2,8 @@ package mm12.mc.MCjEV3net;
 
 import mm12.mc.MCjEV3net.block.BlockLoader;
 import mm12.mc.MCjEV3net.core.GUIhandler;
+import mm12.mc.MCjEV3net.core.RegisterTexture;
+import mm12.mc.MCjEV3net.item.ItemLoader;
 import mm12.mc.MCjEV3net.proxies.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -11,6 +13,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.relauncher.Side;
 
 
 
@@ -28,12 +31,17 @@ public class MCjEV3net {
 	public void preInit(FMLPreInitializationEvent event) {
 		BlockLoader.registerBlocks();
 		BlockLoader.registerTileEntities();
+		ItemLoader.registerItems();
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GUIhandler());
 		
 	}
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+		
+		if(event.getSide() == Side.CLIENT){
+			RegisterTexture.registerTextures();
+		}
 		
 	}
 	@EventHandler

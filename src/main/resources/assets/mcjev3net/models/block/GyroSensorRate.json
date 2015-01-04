@@ -1,0 +1,20 @@
+{
+    "textures": {
+        "bottom": "MCjEV3net:blocks/EV3Side",
+        "top": "MCjEV3net:blocks/gyroSensor",
+        "side": "MCjEV3net:blocks/Rate"
+    },
+    "elements": [
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "texture": "#bottom", "cullface": "down" },
+                "up":    { "texture": "#top", "cullface": "up" },
+                "north": { "texture": "#top", "cullface": "north" },
+                "south": { "texture": "#top", "cullface": "south" },
+                "west":  { "texture": "#side", "cullface": "west" },
+                "east":  { "texture": "#side", "cullface": "east" }
+            }
+        }
+    ]
+}
